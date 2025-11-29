@@ -5,51 +5,60 @@ import { Briefcase, Calendar, MapPin } from "lucide-react";
 const Experience = () => {
   const experiences = [
     {
-      title: "Senior iOS Developer",
-      company: "WorkerNav",
-      companyUrl: "https://www.workernav.com/fr",
-      type: "Freelance",
-      location: "Remote",
-      period: "April 2025 - November 2025",
-      achievements: [
-        "Led the full rebuild of the iOS v3 app using SwiftUI and Clean Architecture",
-        "Integrated AI-powered modules for automated field reports, improving worker efficiency",
-        "Collaborated closely with design and backend teams to ensure a consistent, performant multi-platform experience",
-        "Implemented modern iOS patterns and best practices for maintainable, scalable codebase",
-        "Delivered high-quality features on schedule with comprehensive testing coverage",
-      ],
-      technologies: ["Swift", "SwiftUI", "Clean Architecture", "AI Integration", "CoreData", "Combine"],
-    },
-    {
       title: "Lead Mobile Developer",
       company: "RightCom",
-      type: "Full-time",
-      location: "Cotonou, Benin",
-      period: "March 2024 - Present",
+      type: "Remote",
+      location: "Remote",
+      period: "Jan 2025 – Present",
       achievements: [
-        "Leading mobile development team, establishing best practices and architectural patterns",
-        "Architected and maintained enterprise ticketing application with enhanced functionality and user experience",
-        "Developed comprehensive mobile app for agents to manage tickets and customer calls with real-time updates",
-        "Implemented Bluetooth printing modules for on-the-go receipt printing with POS printers",
-        "Built robust backend integration layer for real-time ticketing data synchronization",
-        "Optimized app performance and implemented offline mode with automatic data synchronization",
-        "Reduced crash rate by 40% through comprehensive error handling and testing",
+        "Spearhead the design and development of next generation mobile applications powering customer experience systems across Africa.",
+        "Lead and mentor a team of mobile developers, improving engineering quality and delivery efficiency.",
+        "Architect end-to-end mobile solutions, ensuring seamless integration with cloud-based products.",
+        "Enhance product reliability through performance optimizations, analytics, testing, and CI/CD.",
       ],
-      technologies: ["React Native", "Expo", "Kotlin", "BLE", "Firebase", "REST APIs"],
+      technologies: ["Mobile Architecture", "Team Leadership", "CI/CD", "Performance Optimization"],
     },
     {
-      title: "Mobile Engineer",
+      title: "Mobile Developer Advocate",
       company: "RightCom",
-      type: "Internship",
-      location: "Cotonou, Benin",
-      period: "November 2023 - February 2024",
+      type: "Remote",
+      location: "Remote",
+      period: "Jan 2022 – Dec 2024",
       achievements: [
-        "Developed mobile ticketing solution using React Native",
-        "Created native modules for mobile printer integration",
-        "Implemented pixel-perfect UI from design mockups",
-        "Collaborated with backend team for API integration",
+        "Drove adoption of RightCom’s mobile products, contributing to a 25% increase in product sales.",
+        "Built and cultivated a developer community, reducing support tickets by 15% through education and engagement.",
+        "Improved developer onboarding and documentation, cutting onboarding time by 30%.",
+        "Strengthened developer experience across the product ecosystem.",
       ],
-      technologies: ["React Native", "Native Modules", "REST APIs"],
+      technologies: ["Developer Relations", "Community Building", "Technical Writing", "Public Speaking"],
+    },
+    {
+      title: "Mobile Application Developer",
+      company: "RightCom",
+      type: "Remote",
+      location: "Remote",
+      period: "Mar 2018 – Dec 2021",
+      achievements: [
+        "Built and optimized Android mobile apps that contributed to a 20% increase in upselling and cross-selling.",
+        "Implemented real-time notification systems that reduced wait times by 15% for enterprise clients.",
+        "Developed and maintained RightQ Kiosk, improving queue efficiency by 25% across locations.",
+        "Integrated REST APIs, real-time data streams, and hardware interactions for enterprise-scale reliability.",
+      ],
+      technologies: ["Android", "Java", "Kotlin", "Real-time Systems", "Hardware Integration"],
+    },
+    {
+      title: "Senior iOS Developer",
+      company: "WorkerNav",
+      type: "Remote",
+      location: "Remote",
+      period: "Apr 2025 – Nov 2025",
+      achievements: [
+        "Rebuilt the WorkerNav iOS app (v3) using SwiftUI and Clean Architecture for improved maintainability.",
+        "Integrated AI-powered reporting modules to enhance field worker productivity.",
+        "Collaborated with backend and Android teams to deliver consistent multi-platform experiences.",
+        "Optimized navigation flows and offline data handling for better performance.",
+      ],
+      technologies: ["iOS", "SwiftUI", "Clean Architecture", "AI Integration", "Offline-first"],
     },
   ];
 
@@ -78,18 +87,7 @@ const Experience = () => {
                     <h3 className="text-2xl font-bold">{exp.title}</h3>
                     <div className="flex items-center gap-2 text-lg text-primary">
                       <Briefcase className="w-5 h-5" />
-                      {exp.companyUrl ? (
-                        <a 
-                          href={exp.companyUrl} 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          className="font-semibold hover:underline"
-                        >
-                          {exp.company}
-                        </a>
-                      ) : (
-                        <span className="font-semibold">{exp.company}</span>
-                      )}
+                      <span className="font-semibold">{exp.company}</span>
                     </div>
                   </div>
                   <Badge variant="outline" className="border-primary/30 w-fit">
