@@ -11,7 +11,7 @@ const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
-      <div 
+      <div
         className="absolute inset-0 z-0"
         style={{
           backgroundImage: `url(${heroBg})`,
@@ -34,33 +34,41 @@ const Hero = () => {
           {/* Main Heading */}
           <div className="space-y-4">
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight">
-              Hi, I'm <span className="gradient-text">René Kakpo</span>
+              René Kakpo
             </h1>
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-foreground/90">
-              Senior iOS & Mobile Engineer
+              Senior Mobile Engineer <span className="text-muted-foreground block text-xl md:text-2xl mt-2">(Android, iOS & Cross-Platform)</span>
             </h2>
           </div>
 
           {/* Description */}
           <p className="max-w-2xl text-lg md:text-xl text-muted-foreground leading-relaxed">
-            Building elegant mobile experiences with Swift, SwiftUI, and Clean Architecture. 
-            Specialized in crafting high-performance iOS applications with over 7 years of expertise.
+            I build high-performance mobile apps and scalable architectures using Kotlin, SwiftUI, Jetpack Compose, Flutter, React Native, and KMM.
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 pt-4">
-            <Button 
-              size="lg" 
+          <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
+            <Button
+              size="lg"
               onClick={() => scrollToSection("projects")}
               className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-6 text-lg"
             >
               View My Work
             </Button>
-            <Button 
-              size="lg" 
-              variant="outline"
+            <a href="/rene_kakpo_portfolio_resume.pdf" download target="_blank" rel="noopener noreferrer">
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-primary/30 hover:bg-primary/10 font-semibold px-8 py-6 text-lg w-full sm:w-auto"
+              >
+                Download Resume
+              </Button>
+            </a>
+            <Button
+              size="lg"
+              variant="secondary"
               onClick={() => scrollToSection("contact")}
-              className="border-primary/30 hover:bg-primary/10 font-semibold px-8 py-6 text-lg"
+              className="font-semibold px-8 py-6 text-lg"
             >
               Get In Touch
             </Button>
@@ -68,23 +76,23 @@ const Hero = () => {
 
           {/* Social Links */}
           <div className="flex gap-4 pt-4">
-            <a 
-              href="https://github.com/Renekakpo" 
-              target="_blank" 
+            <a
+              href="https://github.com/Renekakpo"
+              target="_blank"
               rel="noopener noreferrer"
               className="p-3 rounded-lg bg-card hover:bg-card-hover transition-all duration-300 hover:scale-110 border border-border/50"
             >
               <Github className="w-6 h-6" />
             </a>
-            <a 
-              href="https://www.linkedin.com/in/renekakpo/" 
-              target="_blank" 
+            <a
+              href="https://www.linkedin.com/in/renekakpo/"
+              target="_blank"
               rel="noopener noreferrer"
               className="p-3 rounded-lg bg-card hover:bg-card-hover transition-all duration-300 hover:scale-110 border border-border/50"
             >
               <Linkedin className="w-6 h-6" />
             </a>
-            <a 
+            <a
               href="mailto:renkakpo@gmail.com"
               className="p-3 rounded-lg bg-card hover:bg-card-hover transition-all duration-300 hover:scale-110 border border-border/50"
             >

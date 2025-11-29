@@ -31,20 +31,31 @@ const Navigation = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
           ? "bg-background/80 backdrop-blur-lg border-b border-border shadow-lg"
           : "bg-transparent"
-      }`}
+        }`}
     >
       <div className="container px-4">
         <div className="flex items-center justify-between h-20">
-          {/* Logo */}
+          {/* Logo/Branding */}
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="text-2xl font-bold gradient-text hover:scale-105 transition-transform"
+            className="flex items-center gap-3 hover:scale-105 transition-transform group"
           >
-            RK
+            <img
+              src="/profile.jpg"
+              alt="René Kakpo"
+              className="w-10 h-10 rounded-full border-2 border-primary/20 shadow-md group-hover:border-primary/40 transition-colors"
+            />
+            <div className="hidden sm:flex flex-col items-start">
+              <span className="text-base font-bold gradient-text leading-tight">
+                René Kakpo
+              </span>
+              <span className="text-xs text-muted-foreground leading-tight">
+                Lead Mobile Developer
+              </span>
+            </div>
           </button>
 
           {/* Desktop Navigation */}

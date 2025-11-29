@@ -18,9 +18,9 @@ const About = () => {
           {/* Image Side */}
           <div className="relative animate-fade-up">
             <div className="relative rounded-2xl overflow-hidden">
-              <img 
-                src={aboutVisual} 
-                alt="Mobile Development" 
+              <img
+                src={aboutVisual}
+                alt="Mobile Development"
                 className="w-full h-auto rounded-2xl shadow-2xl"
               />
               <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent"></div>
@@ -43,28 +43,21 @@ const About = () => {
 
             <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
               <p>
-                I'm a passionate Senior Mobile Developer specializing in iOS development with Swift and SwiftUI. 
-                With over 7 years of experience, I've built high-performance applications that prioritize clean 
-                architecture, code quality, and exceptional user experiences.
+                I am a Senior Mobile Engineer with 7+ years of experience building high-performance applications across Android, iOS, and cross-platform ecosystems. My expertise spans Kotlin, Jetpack Compose, SwiftUI, Flutter, React Native, and Kotlin Multiplatform Mobile (KMM), supported by a deep understanding of modern mobile architecture including Clean Architecture, MVVM, modularization, and scalable UI systems.
               </p>
               <p>
-                Currently serving as Lead Mobile Developer at RightCom, I architect and deliver scalable mobile 
-                solutions across iOS, Android, and cross-platform technologies. My expertise extends beyond 
-                mobile development to include backend integration with Firebase and Supabase, as well as 
-                complex system integrations including Bluetooth, POS printers, and IoT devices.
+                Across my career, I have led mobile projects end-to-end—from architecture design to deployment—delivering production-ready apps used across Africa and Europe. At RightCom, I improved stability and performance across multiple enterprise applications, mentored mobile teams, implemented CI/CD pipelines that shortened release cycles, and systematically improved user engagement and developer experience. My work has also contributed to measurable product improvements, including reduced API latency, increased app stability, better UX, and more efficient cross-platform consistency.
               </p>
               <p>
-                I'm deeply committed to modern development practices, emphasizing modularity, testability, and 
-                maintainability. Whether it's implementing Clean Architecture patterns, optimizing app performance, 
-                or integrating cutting-edge technologies, I approach every project with precision and passion.
+                I am passionate about building clean, maintainable codebases, designing intuitive user experiences, and solving complex engineering challenges. Whether developing native apps, rebuilding existing systems, or delivering multi-platform features, I thrive in environments where quality, innovation, and collaboration matter. I continue to explore evolving mobile technologies while helping teams ship reliable, impactful products at scale.
               </p>
             </div>
 
             {/* Highlights */}
             <div className="grid sm:grid-cols-2 gap-3 pt-4">
               {highlights.map((highlight, index) => (
-                <div 
-                  key={index} 
+                <div
+                  key={index}
                   className="flex items-start gap-2 animate-fade-up"
                   style={{ animationDelay: `${0.3 + index * 0.1}s` }}
                 >
