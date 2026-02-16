@@ -1,10 +1,14 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Sun, Moon } from "lucide-react";
+import { useLanguage, type Lang } from "@/i18n/LanguageContext";
+import { useTheme } from "@/theme/ThemeContext";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { lang, setLang, t } = useLanguage();
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,18 +26,59 @@ const Navigation = () => {
   };
 
   const navItems = [
-    { label: "About", id: "about" },
-    { label: "Projects", id: "projects" },
-    { label: "Skills", id: "skills" },
-    { label: "Experience", id: "experience" },
-    { label: "Contact", id: "contact" },
+    { label: t.nav.about, id: "about" },
+    { label: t.nav.projects, id: "projects" },
+    { label: t.nav.skills, id: "skills" },
+    { label: t.nav.experience, id: "experience" },
+    { label: t.nav.contact, id: "contact" },
   ];
+
+  const toggleLang = (newLang: Lang) => {
+    setLang(newLang);
+  };
+
+  const LanguageToggle = () => (
+    <div className="inline-flex items-center rounded-lg border border-border/50 overflow-hidden text-sm">
+      <button
+        onClick={() => toggleLang("en")}
+        className={`px-2.5 py-1.5 font-medium transition-colors ${lang === "en"
+          ? "bg-primary text-primary-foreground"
+          : "text-muted-foreground hover:text-foreground"
+          }`}
+      >
+        EN
+      </button>
+      <button
+        onClick={() => toggleLang("fr")}
+        className={`px-2.5 py-1.5 font-medium transition-colors ${lang === "fr"
+          ? "bg-primary text-primary-foreground"
+          : "text-muted-foreground hover:text-foreground"
+          }`}
+      >
+        FR
+      </button>
+    </div>
+  );
+
+  const ThemeToggle = () => (
+    <button
+      onClick={toggleTheme}
+      className="p-2 rounded-lg border border-border/50 text-muted-foreground hover:text-foreground hover:bg-card transition-all duration-200"
+      aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+    >
+      {theme === "dark" ? (
+        <Sun className="w-4 h-4" />
+      ) : (
+        <Moon className="w-4 h-4" />
+      )}
+    </button>
+  );
 
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-          ? "bg-background/80 backdrop-blur-lg border-b border-border shadow-lg"
-          : "bg-transparent"
+        ? "bg-background/80 backdrop-blur-lg border-b border-border shadow-lg"
+        : "bg-transparent"
         }`}
     >
       <div className="container px-4">
@@ -53,7 +98,7 @@ const Navigation = () => {
                 René Kakpo
               </span>
               <span className="text-xs text-muted-foreground leading-tight">
-                Lead Mobile Developer
+                {t.nav.subtitle}
               </span>
             </div>
           </button>
@@ -70,21 +115,29 @@ const Navigation = () => {
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
               </button>
             ))}
+            <div className="flex items-center gap-2">
+              <LanguageToggle />
+              <ThemeToggle />
+            </div>
             <Button
               onClick={() => scrollToSection("contact")}
               className="bg-primary hover:bg-primary/90 text-primary-foreground"
             >
-              Get In Touch
+              {t.nav.getInTouch}
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 rounded-lg hover:bg-card transition-colors"
-          >
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          <div className="flex md:hidden items-center gap-2">
+            <LanguageToggle />
+            <ThemeToggle />
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="p-2 rounded-lg hover:bg-card transition-colors"
+            >
+              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Menu */}
@@ -104,7 +157,7 @@ const Navigation = () => {
                 onClick={() => scrollToSection("contact")}
                 className="bg-primary hover:bg-primary/90 text-primary-foreground w-full"
               >
-                Get In Touch
+                {t.nav.getInTouch}
               </Button>
             </div>
           </div>

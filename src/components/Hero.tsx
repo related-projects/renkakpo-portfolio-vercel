@@ -1,8 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail, ChevronDown } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const Hero = () => {
+  const { t } = useLanguage();
+
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     element?.scrollIntoView({ behavior: "smooth" });
@@ -28,22 +31,22 @@ const Hero = () => {
           {/* Status Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-card/50 backdrop-blur-sm border border-primary/20">
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-            <span className="text-sm text-muted-foreground">Available for new opportunities</span>
+            <span className="text-sm text-muted-foreground">{t.hero.status}</span>
           </div>
 
           {/* Main Heading */}
           <div className="space-y-4">
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight">
-              René Kakpo
+              {t.hero.headline}
             </h1>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-foreground/90">
-              Senior Mobile Engineer <span className="text-muted-foreground block text-xl md:text-2xl mt-2">(Android, iOS & Cross-Platform)</span>
-            </h2>
+            <p className="text-xl md:text-2xl text-muted-foreground font-medium">
+              {t.hero.secondary}
+            </p>
           </div>
 
           {/* Description */}
           <p className="max-w-2xl text-lg md:text-xl text-muted-foreground leading-relaxed">
-            I build high-performance mobile apps and scalable architectures using Kotlin, SwiftUI, Jetpack Compose, Flutter, React Native, and KMM.
+            {t.hero.description}
           </p>
 
           {/* CTA Buttons */}
@@ -53,7 +56,7 @@ const Hero = () => {
               onClick={() => scrollToSection("projects")}
               className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-6 text-lg"
             >
-              View My Work
+              {t.hero.viewProjects}
             </Button>
             <a href="/rene_kakpo_portfolio_resume.pdf" download target="_blank" rel="noopener noreferrer">
               <Button
@@ -61,17 +64,9 @@ const Hero = () => {
                 variant="outline"
                 className="border-primary/30 hover:bg-primary/10 font-semibold px-8 py-6 text-lg w-full sm:w-auto"
               >
-                Download Resume
+                {t.hero.downloadResume}
               </Button>
             </a>
-            <Button
-              size="lg"
-              variant="secondary"
-              onClick={() => scrollToSection("contact")}
-              className="font-semibold px-8 py-6 text-lg"
-            >
-              Get In Touch
-            </Button>
           </div>
 
           {/* Social Links */}

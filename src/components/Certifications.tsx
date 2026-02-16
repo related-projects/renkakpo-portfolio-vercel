@@ -1,8 +1,11 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Award } from "lucide-react";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const Certifications = () => {
+    const { t } = useLanguage();
+
     const certifications = [
         {
             title: "Associate Android Developer",
@@ -25,9 +28,9 @@ const Certifications = () => {
         <section id="certifications" className="py-20">
             <div className="container px-4">
                 <div className="text-center space-y-4 mb-16 animate-fade-up">
-                    <h2 className="text-4xl md:text-5xl font-bold">Certifications</h2>
+                    <h2 className="text-4xl md:text-5xl font-bold">{t.certifications.title}</h2>
                     <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                        Professional certifications and specialized training
+                        {t.certifications.subtitle}
                     </p>
                     <div className="h-1 w-20 bg-gradient-to-r from-primary to-accent rounded-full mx-auto"></div>
                 </div>
