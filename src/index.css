@@ -7,61 +7,56 @@ All colors MUST be HSL.
 */
 
 @layer base {
+  /* ── Light theme (default) ── */
   :root {
-    --background: 220 26% 14%;
-    --foreground: 210 40% 98%;
+    --background: 210 20% 98%;
+    --foreground: 220 25% 14%;
 
-    --card: 220 23% 17%;
-    --card-foreground: 210 40% 98%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 25% 14%;
 
-    --popover: 220 23% 17%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 25% 14%;
 
-    --primary: 178 80% 58%;
-    --primary-foreground: 220 26% 14%;
+    --primary: 178 65% 40%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 217 33% 23%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 210 15% 93%;
+    --secondary-foreground: 220 20% 25%;
 
-    --muted: 217 33% 23%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 210 15% 93%;
+    --muted-foreground: 215 16% 47%;
 
-    --accent: 178 80% 58%;
-    --accent-foreground: 220 26% 14%;
+    --accent: 178 65% 40%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 63% 31%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 217 33% 23%;
-    --input: 217 33% 23%;
-    --ring: 178 80% 58%;
+    --border: 214 20% 88%;
+    --input: 214 20% 88%;
+    --ring: 178 65% 40%;
 
     --radius: 0.75rem;
-    
+
     /* Custom portfolio colors */
-    --hero-gradient-from: 178 80% 58%;
-    --hero-gradient-to: 217 91% 60%;
-    --card-hover: 220 23% 20%;
-    --glow: 178 100% 60%;
-    --text-highlight: 178 90% 65%;
+    --hero-gradient-from: 178 65% 40%;
+    --hero-gradient-to: 217 80% 50%;
+    --card-hover: 210 15% 96%;
+    --glow: 178 80% 45%;
+    --text-highlight: 178 70% 35%;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
+  /* ── Dark theme ── */
   .dark {
     --background: 220 26% 14%;
     --foreground: 210 40% 98%;
@@ -90,6 +85,14 @@ All colors MUST be HSL.
     --border: 217 33% 23%;
     --input: 217 33% 23%;
     --ring: 178 80% 58%;
+
+    /* Custom portfolio colors */
+    --hero-gradient-from: 178 80% 58%;
+    --hero-gradient-to: 217 91% 60%;
+    --card-hover: 220 23% 20%;
+    --glow: 178 100% 60%;
+    --text-highlight: 178 90% 65%;
+
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -113,6 +116,14 @@ All colors MUST be HSL.
   
   html {
     scroll-behavior: smooth;
+  }
+
+  /* Smooth theme transitions — applied via JS after initial paint */
+  html.theme-transition,
+  html.theme-transition *,
+  html.theme-transition *::before,
+  html.theme-transition *::after {
+    transition: background-color 0.3s ease, color 0.2s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
   }
 }
 

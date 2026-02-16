@@ -1,28 +1,45 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>René Kakpo - Senior iOS & Mobile Engineer Portfolio</title>
-    <meta name="description" content="Senior Mobile Engineer specializing in iOS development with Swift, SwiftUI, and Clean Architecture. 6+ years building high-performance mobile applications." />
-    <meta name="author" content="René Kakpo" />
-    <meta name="keywords" content="iOS Developer, Swift, SwiftUI, Mobile Engineer, Kotlin, Android, React Native, Flutter" />
 
-    <meta property="og:title" content="René Kakpo - Senior iOS & Mobile Engineer" />
-    <meta property="og:description" content="Senior Mobile Engineer specializing in iOS development with Swift, SwiftUI, and Clean Architecture. 6+ years building high-performance mobile applications." />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>René Kakpo | Senior Mobile Engineer</title>
+  <meta name="description"
+    content="Senior Mobile Engineer specializing in Android, iOS, and cross-platform development. 8+ years building scalable mobile applications." />
+  <meta name="author" content="René Kakpo" />
+  <meta name="keywords"
+    content="iOS Developer, Swift, SwiftUI, Mobile Engineer, Kotlin, Android, React Native, Flutter, Clean Architecture" />
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="René Kakpo - Senior iOS & Mobile Engineer" />
-    <meta name="twitter:description" content="Senior Mobile Engineer specializing in iOS development with Swift, SwiftUI, and Clean Architecture" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-    
-    <link rel="canonical" href="https://lovable.dev/projects/b30a2ce2-d2de-4949-a25b-24d3ec8e8af6" />
-  </head>
+  <meta property="og:title" content="René Kakpo | Senior Mobile Engineer" />
+  <meta property="og:description"
+    content="Senior Mobile Engineer specializing in Android, iOS, and cross-platform development. 8+ years building scalable mobile applications." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/profile.jpg" />
 
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="René Kakpo | Senior Mobile Engineer" />
+  <meta name="twitter:description"
+    content="Senior Mobile Engineer specializing in Android, iOS, and cross-platform development. 8+ years building scalable mobile applications." />
+  <meta name="twitter:image" content="/profile.jpg" />
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <script>
+    // Flash prevention: apply theme before first paint
+    (function () {
+      var theme = localStorage.getItem('theme');
+      if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    })();
+  </script>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+
 </html>

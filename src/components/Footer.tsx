@@ -1,15 +1,18 @@
 import { Github, Linkedin, Mail, Heart } from "lucide-react";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const Footer = () => {
+  const { t } = useLanguage();
+
   return (
     <footer className="py-12 border-t border-border">
       <div className="container px-4">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Copyright */}
           <div className="flex items-center gap-2 text-sm text-muted-foreground">
-            <span>© 2025 René Kakpo. Built with</span>
+            <span>© 2025 René Kakpo. {t.footer.builtWith}</span>
             <Heart className="w-4 h-4 text-primary fill-current" />
-            <span>using React & TypeScript</span>
+            <span>{t.footer.using}</span>
           </div>
 
           {/* Social Links */}

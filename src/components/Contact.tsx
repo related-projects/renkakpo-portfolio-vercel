@@ -1,8 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Mail, Github, Linkedin, MapPin, Briefcase } from "lucide-react";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const Contact = () => {
+  const { t } = useLanguage();
+
   const contactInfo = [
     {
       icon: <Mail className="w-6 h-6" />,
@@ -24,7 +27,7 @@ const Contact = () => {
     },
     {
       icon: <MapPin className="w-6 h-6" />,
-      label: "Location",
+      label: t.contact.locationLabel,
       value: "Cotonou, Benin",
       href: null,
     },
@@ -34,9 +37,9 @@ const Contact = () => {
     <section id="contact" className="py-20 bg-card/30">
       <div className="container px-4">
         <div className="text-center space-y-4 mb-16 animate-fade-up">
-          <h2 className="text-4xl md:text-5xl font-bold">Get In Touch</h2>
+          <h2 className="text-4xl md:text-5xl font-bold">{t.contact.title}</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Open to freelance projects and full-time opportunities
+            {t.contact.subtitle}
           </p>
           <div className="h-1 w-20 bg-gradient-to-r from-primary to-accent rounded-full mx-auto"></div>
         </div>
@@ -48,20 +51,20 @@ const Contact = () => {
               <div className="flex justify-center">
                 <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-primary/10 border border-primary/20">
                   <Briefcase className="w-5 h-5 text-primary" />
-                  <span className="font-semibold">Available for New Opportunities</span>
+                  <span className="font-semibold">{t.contact.availableBadge}</span>
                 </div>
               </div>
 
               {/* Description */}
               <div className="text-center space-y-4">
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  I'm actively seeking new opportunities to contribute my expertise in iOS and mobile development. 
-                  Whether you have a project in mind, need technical consultation, or want to discuss potential 
-                  collaboration, I'd love to hear from you.
+                  {t.contact.description}
                 </p>
                 <p className="text-muted-foreground">
-                  Open to both <span className="text-primary font-semibold">freelance projects</span> and{" "}
-                  <span className="text-primary font-semibold">full-time positions</span>
+                  {t.contact.openTo}{" "}
+                  <span className="text-primary font-semibold">{t.contact.freelance}</span>{" "}
+                  {t.contact.and}{" "}
+                  <span className="text-primary font-semibold">{t.contact.fullTime}</span>
                 </p>
               </div>
 
@@ -106,7 +109,7 @@ const Contact = () => {
                 >
                   <a href="mailto:renkakpo@gmail.com">
                     <Mail className="w-5 h-5 mr-2" />
-                    Send Me an Email
+                    {t.contact.sendEmail}
                   </a>
                 </Button>
               </div>
